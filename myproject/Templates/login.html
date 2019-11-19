@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+
+<h3 class="bd-title">Login </h3>
+
+{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+
+    <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="card">
+            <div class='card-body'>
+            <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type='submit'> submit </button>
+            <br>
+            not an user? <a href="{% url 'signup' %}">sign up now</a>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

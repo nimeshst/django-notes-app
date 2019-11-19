@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from django.http import HttpResponse
+from django.shortcuts import render
+from .models import TextNotes
+# Create your views here.
+"""
+def home(request):
+    text_notes = TextNotes.objects.all()
+    text_notes_title = list()
+    text_notes_notes=list()
+    for text_note in text_notes:
+        text_notes_title.append(text_note.title)
+        text_notes_notes.append(text_note.note)
+    response_html ='<br>'.join(text_notes_notes)
+    return HttpResponse(response_html)
+
+"""
+def home(request):
+    return render(request,'home.html')
+
+def notes_title(request,pk):
+    note_title = TextNotes.objects.get(pk=pk)
+    return render(request, 'notetitle.html', {'note_title':note_title})
+

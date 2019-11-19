@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block breadcrumb %}
+    create new Notes here
+{% endblock %}
+
+{% block content %}
+     <form method="post">
+         {# crpf tokens are used to protect the site from site forgery #}
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+
+        <button type="submit" class="btn btn-success">Post</button>
+      </form>
+{% endblock %}

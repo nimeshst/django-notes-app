@@ -1,0 +1,14 @@
+input[type=password] {
+    padding:5px;
+    width:100%;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=passsword]:focus {
+    border-color:blue;
+}
+input[type=text]{
+    width : 100%;
+}
